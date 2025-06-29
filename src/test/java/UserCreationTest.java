@@ -1,58 +1,36 @@
 import io.qameta.allure.junit4.DisplayName;
-import org.apache.commons.lang3.RandomStringUtils;
+import io.restassured.response.Response;
 import org.junit.Test;
-import static io.restassured.RestAssured.given;
+import ru.practicum.models.UserRegistration;
+
 import static org.hamcrest.Matchers.*;
 
 public class UserCreationTest extends BaseTest {
-    private static final String REGISTRATION = "/api/auth/register";
-
     @Test
     @DisplayName("Создать пользователя")
     public void newUserCreate() {
-        String random = RandomStringUtils.randomAlphanumeric(5);
-        String email = "Testuser" + random + "@gmail.com";
-        String password = "qwerty";
-        String name = "Pavel";
+        UserRegistration user = createRandomUser();
 
-        String requestBody = String.format("{\"email\": \"%s\", \"password\": \"%s\", \"name\": \"%s\"}",
-                email, password, name);
+        Response response = authClient.register(user);
 
-        given()
-                .header("Content-type", "application/json")
-                .body(requestBody)
-                .when()
-                .post(REGISTRATION)
-                .then()
+        response.then()
                 .statusCode(200)
                 .body("success", equalTo(true))
-                .body("user.name", equalTo(name));
+                .body("user.name", equalTo(user.getName()));
     }
 
     @Test
     @DisplayName("Создать существующего пользователя")
     public void newUserExisting() {
-        String email = "Pavel@gmail.com";
-        String password = "qwerty";
-        String name = "Pavel";
+        UserRegistration user = new UserRegistration("Pavel@gmail.com", "qwerty", "Pavel");
 
-        // Сначала создаем пользователя
-        String requestBody = String.format("{\"email\": \"%s\", \"password\": \"%s\", \"name\": \"%s\"}",
-                email, password, name);
 
-        given()
-                .header("Content-type", "application/json")
-                .body(requestBody)
-                .when()
-                .post(REGISTRATION);
+        authClient.register(user);
 
-        // Пытаемся создать того же пользователя снова
-        given()
-                .header("Content-type", "application/json")
-                .body(requestBody)
-                .when()
-                .post(REGISTRATION)
-                .then()
+
+        Response response = authClient.register(user);
+
+        response.then()
                 .statusCode(403)
                 .body("success", equalTo(false))
                 .body("message", equalTo("User already exists"));
@@ -61,18 +39,11 @@ public class UserCreationTest extends BaseTest {
     @Test
     @DisplayName("Создать пользователя без одного поля")
     public void newUserWithoutPole() {
-        // Тест без поля email
-        String email = "Pavel@gmail.com";
-        String password = "qwerty";
-        String requestBody = String.format("{\"email\": \"%s\", \"password\": \"%s\"}",
-                email, password);
+        UserRegistration user = new UserRegistration("Pavel@gmail.com", "qwerty", null);
 
-        given()
-                .header("Content-type", "application/json")
-                .body(requestBody)
-                .when()
-                .post(REGISTRATION)
-                .then()
+        Response response = authClient.register(user);
+
+        response.then()
                 .statusCode(403)
                 .body("success", equalTo(false))
                 .body("message", equalTo("Email, password and name are required fields"));
