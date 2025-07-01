@@ -4,8 +4,8 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import org.junit.BeforeClass;
 import ru.practicum.models.UserRegistration;
-import ru.practicum.steps.AuthClient;
-import ru.practicum.steps.OrderClient;
+import steps.AuthClient;
+import steps.OrderClient;
 
 public class BaseTest {
     protected static AuthClient authClient;
@@ -19,7 +19,6 @@ public class BaseTest {
                 new ResponseLoggingFilter(),
                 new AllureRestAssured()
         );
-
         authClient = new AuthClient();
         orderClient = new OrderClient();
     }

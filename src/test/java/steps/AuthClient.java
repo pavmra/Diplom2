@@ -1,5 +1,6 @@
-package ru.practicum.steps;
+package steps;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import ru.practicum.models.UserRegistration;
 import ru.practicum.models.UserLogin;
@@ -10,6 +11,7 @@ public class AuthClient {
     private static final String REGISTER = "/api/auth/register";
     private static final String LOGIN = "/api/auth/login";
 
+    @Step("Регистрация")
     public Response register(UserRegistration user) {
         return given()
                 .contentType("application/json")
@@ -18,6 +20,7 @@ public class AuthClient {
                 .post(REGISTER);
     }
 
+    @Step("Авторизация")
     public Response login(UserLogin credentials) {
         return given()
                 .contentType("application/json")
@@ -26,6 +29,7 @@ public class AuthClient {
                 .post(LOGIN);
     }
 
+    @Step("Получить токен авторизации")
     public String getAuthToken(UserRegistration user) {
         UserLogin credentials = new UserLogin(user.getEmail(), user.getPassword());
         return login(credentials)
