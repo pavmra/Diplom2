@@ -1,0 +1,114 @@
+{
+  "uid" : "33293765f566546f",
+  "name" : "Создать существующего пользователя",
+  "fullName" : "UserCreationTest.newUserExisting",
+  "historyId" : "ebc6fc81ffa7cc5b603ab5fef5c38bf1",
+  "time" : {
+    "start" : 1751203484154,
+    "stop" : 1751203484599,
+    "duration" : 445
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8b1ac0fd6dae982c",
+      "name" : "Request",
+      "source" : "8b1ac0fd6dae982c.html",
+      "type" : "text/html",
+      "size" : 746
+    }, {
+      "uid" : "c183e2e4e76e3085",
+      "name" : "Request",
+      "source" : "c183e2e4e76e3085.html",
+      "type" : "text/html",
+      "size" : 746
+    }, {
+      "uid" : "ef94874aa8c5e4d5",
+      "name" : "HTTP/1.1 403 Forbidden",
+      "source" : "ef94874aa8c5e4d5.html",
+      "type" : "text/html",
+      "size" : 638
+    }, {
+      "uid" : "76b4980c2be792df",
+      "name" : "HTTP/1.1 403 Forbidden",
+      "source" : "76b4980c2be792df.html",
+      "type" : "text/html",
+      "size" : 638
+    }, {
+      "uid" : "4da83a4944642d0d",
+      "name" : "Request",
+      "source" : "4da83a4944642d0d.html",
+      "type" : "text/html",
+      "size" : 746
+    }, {
+      "uid" : "85709a8ae9856c49",
+      "name" : "Request",
+      "source" : "85709a8ae9856c49.html",
+      "type" : "text/html",
+      "size" : 746
+    }, {
+      "uid" : "1b2f5ffd55a53094",
+      "name" : "HTTP/1.1 403 Forbidden",
+      "source" : "1b2f5ffd55a53094.html",
+      "type" : "text/html",
+      "size" : 638
+    }, {
+      "uid" : "b0eb5b0fa715e163",
+      "name" : "HTTP/1.1 403 Forbidden",
+      "source" : "b0eb5b0fa715e163.html",
+      "type" : "text/html",
+      "size" : 638
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "UserCreationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "newUserExisting"
+  }, {
+    "name" : "suite",
+    "value" : "UserCreationTest"
+  }, {
+    "name" : "host",
+    "value" : "pavmra"
+  }, {
+    "name" : "thread",
+    "value" : "29392@pavmra.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "33293765f566546f.json",
+  "parameterValues" : [ ]
+}

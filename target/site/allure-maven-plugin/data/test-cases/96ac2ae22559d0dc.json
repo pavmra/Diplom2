@@ -1,0 +1,138 @@
+{
+  "uid" : "96ac2ae22559d0dc",
+  "name" : "Логин пользователя",
+  "fullName" : "UserLoginTest.loginUser",
+  "historyId" : "dd9fec940fec1b7944bd0e544a52d7a4",
+  "time" : {
+    "start" : 1751203484937,
+    "stop" : 1751203485517,
+    "duration" : 580
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e1eb1e625931f1a6",
+      "name" : "Request",
+      "source" : "e1eb1e625931f1a6.html",
+      "type" : "text/html",
+      "size" : 762
+    }, {
+      "uid" : "7ecf8b8282780a27",
+      "name" : "Request",
+      "source" : "7ecf8b8282780a27.html",
+      "type" : "text/html",
+      "size" : 762
+    }, {
+      "uid" : "183eb1e107119753",
+      "name" : "Request",
+      "source" : "183eb1e107119753.html",
+      "type" : "text/html",
+      "size" : 762
+    }, {
+      "uid" : "de449e91165e9c98",
+      "name" : "HTTP/1.1 200 OK",
+      "source" : "de449e91165e9c98.html",
+      "type" : "text/html",
+      "size" : 1278
+    }, {
+      "uid" : "a6c2750e0f4df64c",
+      "name" : "HTTP/1.1 200 OK",
+      "source" : "a6c2750e0f4df64c.html",
+      "type" : "text/html",
+      "size" : 1278
+    }, {
+      "uid" : "1fa8e4454a30481e",
+      "name" : "HTTP/1.1 200 OK",
+      "source" : "1fa8e4454a30481e.html",
+      "type" : "text/html",
+      "size" : 1278
+    }, {
+      "uid" : "ef78ed8fe6645080",
+      "name" : "Request",
+      "source" : "ef78ed8fe6645080.html",
+      "type" : "text/html",
+      "size" : 674
+    }, {
+      "uid" : "68a1621c6c14805",
+      "name" : "Request",
+      "source" : "68a1621c6c14805.html",
+      "type" : "text/html",
+      "size" : 674
+    }, {
+      "uid" : "1e9d63549b2cd7fb",
+      "name" : "Request",
+      "source" : "1e9d63549b2cd7fb.html",
+      "type" : "text/html",
+      "size" : 674
+    }, {
+      "uid" : "5d1175886b98b3da",
+      "name" : "HTTP/1.1 200 OK",
+      "source" : "5d1175886b98b3da.html",
+      "type" : "text/html",
+      "size" : 1065
+    }, {
+      "uid" : "c0d90717509f623a",
+      "name" : "HTTP/1.1 200 OK",
+      "source" : "c0d90717509f623a.html",
+      "type" : "text/html",
+      "size" : 1065
+    }, {
+      "uid" : "3f8f59f9555753d3",
+      "name" : "HTTP/1.1 200 OK",
+      "source" : "3f8f59f9555753d3.html",
+      "type" : "text/html",
+      "size" : 1065
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 12,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "UserLoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginUser"
+  }, {
+    "name" : "suite",
+    "value" : "UserLoginTest"
+  }, {
+    "name" : "host",
+    "value" : "pavmra"
+  }, {
+    "name" : "thread",
+    "value" : "29392@pavmra.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "96ac2ae22559d0dc.json",
+  "parameterValues" : [ ]
+}
