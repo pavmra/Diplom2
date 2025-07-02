@@ -1,6 +1,7 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import ru.practicum.models.Order;
@@ -68,5 +69,12 @@ public class OrderCreationTest extends BaseTest {
         Response response = orderClient.createOrder(order, token);
         response.then()
                 .statusCode(SC_INTERNAL_SERVER_ERROR );
+    }
+
+    @After
+    public void tearDown() {
+        if (token != null) {
+            authClient.deleteUser(token);
+        }
     }
 }

@@ -1,6 +1,7 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import ru.practicum.models.UserRegistration;
@@ -11,11 +12,13 @@ import static org.hamcrest.Matchers.*;
 public class UserLoginTest extends BaseTest {
 
     private UserRegistration user;
+    private String token;
 
     @Before
     public void setUp() {
         user = createRandomUser();
         authClient.register(user);
+        token = authClient.getAuthToken(user);
     }
 
     @Test
@@ -64,5 +67,12 @@ public class UserLoginTest extends BaseTest {
                 .statusCode(SC_UNAUTHORIZED)
                 .body("success", equalTo(false))
                 .body("message", equalTo("email or password are incorrect"));
+    }
+
+    @After
+    public void tearDown() {
+        if (token != null) {
+            authClient.deleteUser(token);
+        }
     }
 }

@@ -1,6 +1,7 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import ru.practicum.models.UserRegistration;
@@ -10,6 +11,7 @@ import static org.hamcrest.Matchers.*;
 public class UserCreationTest extends BaseTest {
 
     private UserRegistration user;
+    private String token;
 
     @Before
     public void setUp() {
@@ -74,5 +76,12 @@ public class UserCreationTest extends BaseTest {
                 .statusCode(SC_FORBIDDEN)
                 .body("success", equalTo(false))
                 .body("message", equalTo("Email, password and name are required fields"));
+    }
+
+    @After
+    public void tearDown() {
+        if (token != null) {
+            authClient.deleteUser(token);
+        }
     }
 }

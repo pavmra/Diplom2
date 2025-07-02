@@ -10,6 +10,7 @@ import static io.restassured.RestAssured.given;
 public class AuthClient {
     private static final String REGISTER = "/api/auth/register";
     private static final String LOGIN = "/api/auth/login";
+    private static final String USER = "/api/auth/user";
 
     @Step("Регистрация")
     public Response register(UserRegistration user) {
@@ -36,5 +37,14 @@ public class AuthClient {
                 .then()
                 .extract()
                 .path("accessToken");
+    }
+
+    @Step("Удалить пользователя")
+    public Response deleteUser(String authToken) {
+        return given()
+                .contentType("application/json")
+                .header("Authorization", authToken)
+                .when()
+                .delete(USER);
     }
 }
